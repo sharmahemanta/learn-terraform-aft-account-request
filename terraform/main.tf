@@ -1,3 +1,5 @@
+
+####### Sandbox-test-01 #######
 module "sandbox-test-01" {
   source = "./modules/aft-account-request"
 
@@ -26,6 +28,7 @@ module "sandbox-test-01" {
   account_customizations_name = "sandbox-01"
 }
 
+####### Sandbox-test-02 #######
 module "sandbox-test-02" {
   source = "./modules/aft-account-request"
 
@@ -39,7 +42,7 @@ module "sandbox-test-02" {
   }
 
   account_tags = {
-    "Learn Tutorial" = "Sandbox-01-AFT"
+    "Learn Tutorial" = "Sandbox-02-AFT"
   }
 
   change_management_parameters = {
@@ -54,7 +57,7 @@ module "sandbox-test-02" {
   account_customizations_name = "sandbox-02"
 }
 
-
+####### Sonian #######
 module "sonian" {
   source = "./modules/aft-account-request"
 
