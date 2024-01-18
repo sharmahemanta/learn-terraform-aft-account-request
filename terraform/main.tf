@@ -85,3 +85,32 @@ module "sonian" {
 
   account_customizations_name = "sonian01"
 }
+
+####### Danny #######
+module "danny01" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-ct-danny-01@sharma.im"
+    AccountName               = "danny01-aft"
+    ManagedOrganizationalUnit = "Danny"
+    SSOUserEmail              = "aws-ct-danny-01@sharma.im"
+    SSOUserFirstName          = "Danny"
+    SSOUserLastName           = "AFT"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "Danny AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Hemanta Sharma"
+    change_reason       = "Danny Dude"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "danny01"
+}
