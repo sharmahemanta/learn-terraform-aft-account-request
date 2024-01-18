@@ -1,17 +1,17 @@
-module "sandbox" {
+module "sandbox-test-01" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
     AccountEmail              = "aws-ct-sandbox-01@sharma.im"
-    AccountName               = "sandbox-aft"
+    AccountName               = "sandbox-01-aft"
     ManagedOrganizationalUnit = "Sandbox"
     SSOUserEmail              = "aws-ct-sandbox-01@sharma.im"
-    SSOUserFirstName          = "Sandbox"
-    SSOUserLastName           = "AFT"
+    SSOUserFirstName          = "Sandbox ZeroOne"
+    SSOUserLastName           = "Zero One"
   }
 
   account_tags = {
-    "Learn Tutorial" = "AFT"
+    "Learn Tutorial" = "Sandbox-01-AFT"
   }
 
   change_management_parameters = {
@@ -23,8 +23,37 @@ module "sandbox" {
     group = "non-prod"
   }
 
-  account_customizations_name = "sandbox"
+  account_customizations_name = "sandbox-01"
 }
+
+module "sandbox-test-02" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-ct-sandbox-02@sharma.im"
+    AccountName               = "sandbox-02-aft"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "aws-ct-sandbox-02@sharma.im"
+    SSOUserFirstName          = "Sandbox"
+    SSOUserLastName           = "Zero Two"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "Sandbox-01-AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "HashiCorp Learn"
+    change_reason       = "Learn AWS Control Tower Account Factory for Terraform"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox-02"
+}
+
 
 module "sonian" {
   source = "./modules/aft-account-request"
